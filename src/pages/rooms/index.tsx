@@ -12,6 +12,7 @@ export default function Rooms() {
       <Head>
         <title>Rooms — BYU Library Rooms</title>
       </Head>
+      <Header />
       <main className="container py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Rooms now</h1>

@@ -12,6 +12,7 @@ export default function RoomDetail() {
 
   if (!room) {
     return (
+      <Header />
       <main className="container py-8">
         <p>Room not found. <Link href="/rooms" className="text-blue-600">Back</Link></p>
       </main>

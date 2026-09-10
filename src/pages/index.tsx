@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Head from 'next/head'
 import HeroPreview from '../components/HeroPreview'
+import Header from '../components/Header'
 
 export default function Home() {
   return (
@@ -8,7 +9,9 @@ export default function Home() {
       <Head>
         <title>BYU Library Rooms — Now</title>
       </Head>
+      <Header />
       <main className="container py-12">
+        {/* Header moved to top; keep spacing consistent */}
         <header className="mb-8">
           <h1 className="text-4xl font-extrabold">Know which library rooms are free before you walk over.</h1>
           <p className="mt-3 text-lg text-slate-700">Real-time room status so you can pick a room with confidence.</p>
