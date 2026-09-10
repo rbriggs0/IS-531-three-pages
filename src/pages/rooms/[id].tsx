@@ -13,7 +13,7 @@ export default function RoomDetail() {
   if (!room) {
     return (
       <main className="container py-8">
-        <p>Room not found. <Link href="/rooms"><a className="text-blue-600">Back</a></Link></p>
+        <p>Room not found. <Link href="/rooms" className="text-blue-600">Back</Link></p>
       </main>
     )
   }
@@ -26,7 +26,7 @@ export default function RoomDetail() {
       <main className="container py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">{room.name}</h1>
-          <Link href="/"><a className="text-sm text-blue-600">Home</a></Link>
+          <Link href="/" className="text-sm text-blue-600">Home</Link>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

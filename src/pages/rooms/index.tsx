@@ -15,7 +15,7 @@ export default function Rooms() {
       <main className="container py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Rooms now</h1>
-          <Link href="/"><a className="text-sm text-blue-600">Home</a></Link>
+          <Link href="/" className="text-sm text-blue-600">Home</Link>
         </div>
 
         <div>

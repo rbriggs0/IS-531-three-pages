@@ -14,9 +14,7 @@ export default function Home() {
         </header>
 
         <section className="mt-6">
-          <Link href="/rooms">
-            <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold">Find available rooms</a>
-          </Link>
+          <Link href="/rooms" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold">Find available rooms</Link>
         </section>
 
         <section className="mt-12">
