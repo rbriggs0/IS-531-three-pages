@@ -21,7 +21,8 @@ export default function Rooms() {
         <div>
           {occ.map((o) => {
             const r = byId[o.roomId]
-            return <RoomCard key={o.roomId} id={r.id} name={r.name} location={r.location} status={o.status} />
+            const conflict = o.status === 'uncertain' || (o.status === 'occupied' && !o.hasCurrentRes)
+            return <RoomCard key={o.roomId} id={r.id} name={r.name} location={r.location} status={o.status} conflict={conflict} />
           })}
         </div>
       </main>

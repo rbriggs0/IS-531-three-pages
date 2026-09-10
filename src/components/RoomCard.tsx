@@ -6,6 +6,7 @@ type Props = {
   name: string
   location: string
   status: 'free' | 'occupied' | 'uncertain'
+  conflict?: boolean
 }
 
 export default function RoomCard({ id, name, location, status }: Props) {
@@ -20,7 +21,10 @@ export default function RoomCard({ id, name, location, status }: Props) {
             <div className="font-semibold">{name}</div>
             <div className="text-sm text-slate-500">{location}</div>
           </div>
-          <div className={`px-3 py-1 rounded-full text-sm ${color}`}>{status.toUpperCase()}</div>
+          <div className="flex items-center gap-2">
+            {conflict && <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Likely conflict</span>}
+            <div className={`px-3 py-1 rounded-full text-sm ${color}`}>{status.toUpperCase()}</div>
+          </div>
         </div>
         <div className="mt-3 text-xs text-slate-600">Tap to view timeline and resolve conflicts</div>
       </a>

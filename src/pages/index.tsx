@@ -9,13 +9,13 @@ export default function Home() {
       </Head>
       <main className="container py-12">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold">See which BYU library rooms are actually free now</h1>
-          <p className="mt-2 text-slate-600">Avoid double bookings and wasted trips — find rooms that are truly available or see conflict warnings.</p>
+          <h1 className="text-4xl font-extrabold">See which BYU library rooms are actually free — now.</h1>
+          <p className="mt-3 text-lg text-slate-700">Avoid double bookings and wasted trips. Find a room that's truly available and spot likely conflicts before you walk over.</p>
         </header>
 
         <section className="mt-6">
           <Link href="/rooms">
-            <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold">Find rooms near me now</a>
+            <a className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold">Find available rooms</a>
           </Link>
         </section>
 
