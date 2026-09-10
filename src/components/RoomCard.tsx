@@ -9,16 +9,21 @@ type Props = {
   conflict?: boolean
 }
 
-export default function RoomCard({ id, name, location, status }: Props) {
+export default function RoomCard({ id, name, location, status, conflict }: Props) {
   const color =
     status === 'free' ? 'bg-green-100 text-green-800' : status === 'occupied' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
 
   return (
     <Link href={`/rooms/${id}`} className="block border rounded-md p-4 hover:shadow-sm transition-colors mb-3">
       <div className="flex items-center justify-between">
-        <div>
-          <div className="font-semibold">{name}</div>
-          <div className="text-sm text-slate-500">{location}</div>
+        <div className="flex items-center gap-3">
+          {status === 'free' && (
+            <img src="/images/room-example.png" alt={`${name} photo`} className="w-20 h-12 object-cover rounded-sm border" />
+          )}
+          <div>
+            <div className="font-semibold">{name}</div>
+            <div className="text-sm text-slate-500">{location}</div>
+          </div>
         </div>
         <div className="flex items-center gap-2">
           {conflict && <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Likely conflict</span>}
