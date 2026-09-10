@@ -52,8 +52,11 @@ export default function HeroPreview() {
 
         <div className="w-1/3 flex flex-col items-end">
           <div className="w-full h-32 bg-gradient-to-br from-slate-100 to-white rounded-md flex items-center justify-center text-slate-400">
-            {/* stylized small device preview */}
-            <div className="w-32 h-20 bg-white border rounded p-2 flex items-center justify-center text-sm font-semibold text-green-700">Free Now</div>
+            {/* use user's provided room image instead of the stylized text */}
+            <div className="flex flex-col items-center">
+              <img src="/images/room-example.png" alt="Room example" className="w-32 h-20 object-cover rounded border" />
+              <div className="mt-2 text-sm font-semibold text-green-700">Room Free</div>
+            </div>
           </div>
           <Link href="/rooms" className="mt-4 w-full inline-block text-center bg-blue-600 text-white px-3 py-2 rounded-md font-semibold">Open rooms list</Link>
         </div>
