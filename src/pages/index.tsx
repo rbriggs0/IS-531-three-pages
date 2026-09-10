@@ -17,6 +17,10 @@ export default function Home() {
           <Link href="/rooms" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold">Find available rooms</Link>
         </section>
 
+        <section className="mt-10">
+          <img src="/images/hero-rooms-16x9.png" alt="Illustration: study room with status pins and a 'Free Now' badge" className="w-full rounded-md shadow-sm" />
+        </section>
+
         <section className="mt-12">
           <h2 className="text-xl font-semibold mb-3">How it helps</h2>
           <ul className="list-disc pl-5 text-slate-600">
