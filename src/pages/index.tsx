@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import HeroPreview from '../components/HeroPreview'
 
 export default function Home() {
   return (
@@ -9,16 +10,16 @@ export default function Home() {
       </Head>
       <main className="container py-12">
         <header className="mb-8">
-          <h1 className="text-4xl font-extrabold">See which BYU library rooms are actually free — now.</h1>
-          <p className="mt-3 text-lg text-slate-700">Avoid double bookings and wasted trips. Find a room that's truly available and spot likely conflicts before you walk over.</p>
+          <h1 className="text-4xl font-extrabold">Know which library rooms are free before you walk over.</h1>
+          <p className="mt-3 text-lg text-slate-700">Real-time room status so you can pick a room with confidence.</p>
         </header>
 
         <section className="mt-6">
           <Link href="/rooms" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md font-semibold">Find available rooms</Link>
         </section>
 
-        <section className="mt-10">
-          <img src="/images/hero-rooms-16x9.png" alt="Illustration: study room with status pins and a 'Free Now' badge" className="w-full rounded-md shadow-sm" />
+        <section className="mt-8">
+          <HeroPreview />
         </section>
 
         <section className="mt-12">
