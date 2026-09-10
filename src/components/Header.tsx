@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <header className="w-full border-b bg-white">
+    <header className="w-full border-b bg-white" style={{ minHeight: 92 }}>
       <div className="w-full" style={{ overflow: 'visible' }}>
         <div className="max-w-6xl mx-auto flex items-center gap-4 py-6 px-4">
           <Link href="/" className="flex items-center gap-3" >
@@ -11,8 +11,8 @@ export default function Header() {
               <img
                 src="/images/logo-icon.svg"
                 alt="RoomsNow logo"
-                className="h-20 w-auto object-contain"
-                style={{ display: 'block' }}
+                className="h-24 w-auto object-contain"
+                style={{ display: 'block', marginTop: 0, marginBottom: 0 }}
               />
             </div>
             <span className="ml-3 text-xl font-semibold text-slate-800">RoomsNow</span>
