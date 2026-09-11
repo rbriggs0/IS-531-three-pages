@@ -2,6 +2,7 @@ import Head from 'next/head'
 import RoomCard from '../../components/RoomCard'
 import { getOccupancy, rooms } from '../../lib/mockData'
 import Link from 'next/link'
+import Header from '../../components/Header'
 
 export default function Rooms() {
   const occ = getOccupancy()

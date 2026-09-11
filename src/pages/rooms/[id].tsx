@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Timeline from '../../components/Timeline'
 import { reservations, rooms } from '../../lib/mockData'
+import Header from '../../components/Header'
 
 export default function RoomDetail() {
   const router = useRouter()
@@ -12,10 +13,12 @@ export default function RoomDetail() {
 
   if (!room) {
     return (
-      <Header />
-      <main className="container py-8">
-        <p>Room not found. <Link href="/rooms" className="text-blue-600">Back</Link></p>
-      </main>
+      <>
+        <Header />
+        <main className="container py-8">
+          <p>Room not found. <Link href="/rooms" className="text-blue-600">Back</Link></p>
+        </main>
+      </>
     )
   }
 
