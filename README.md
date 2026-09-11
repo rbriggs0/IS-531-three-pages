@@ -65,4 +65,23 @@ I created the project and committed locally. To publish and deploy:
 1. Create a public GitHub repo and push this repository as the initial commit (preserve history).
 2. Connect the repo to Vercel or Netlify for automatic deploys on push.
 
+Additional notes required by the assignment
+------------------------------------------
+Screen rationale (why each earned a slot)
+- Landing (/) — Why it earned a slot: primary acquisition surface; must communicate the product's affordance quickly. The landing hero groups headline, CTA, and an illustrative proof so a first-time user understands the value in under 3 seconds.
+- Reserve / Room List (/rooms) — Why it earned a slot: this is the primary working surface where the capability is exercised. Users scan rows for availability; the screen validates scanning & grouping decisions.
+- Room Detail (/rooms/[id]) — Why it earned a slot: resolves ambiguity from the list and provides conflict-resolution affordances and timeline clarity; essential for testing the product's core conflict flows.
+
+Before / After evidence (concrete)
+- Initial hero (before): `public/screenshots/initial-hero.png`
+- Revised hero (after): `public/screenshots/revised-hero.png`
+
+First-read answers (explicit, per assignment)
+- Does the landing screen signal the primary capability and value at first glance? — Yes. The headline is dominant and the illustrative proof sits directly under the CTA to reinforce "Certainty".
+- Does every element on the landing screen earn its place? — After removing duplicate CTAs and replacing decorative art with proof, each element supports the primary job (headline → CTA → proof).
+- What information/actions belong together and which Gestalt principle shows that? — Headline+CTA+proof (proximity, similarity); list rows group thumbnail+name+badge (common region/proximity); detail groups timeline+actions (common region).
+- Do screens 2 and 3 stay on mission, and can you return to Home from everywhere? — Yes: Reserve (rooms list) scans availability, Detail resolves conflicts; header logo and Home links return you to landing.
+- What did the AI initially get wrong, skip, or oversimplify, and what did you change? — The AI used decorative hero art and duplicate CTAs; I replaced the hero with proof, standardized badges, and removed competing CTAs so the affordance is clearer.
+
+
 
