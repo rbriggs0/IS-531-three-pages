@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import HeroPreview from '../components/HeroPreview'
 import Header from '../components/Header'
 
 export default function Home() {
@@ -22,7 +21,10 @@ export default function Home() {
         </section>
 
         <section className="mt-8">
-          <HeroPreview />
+          <figure className="mx-auto w-full max-w-3xl rounded-md shadow-sm bg-white p-3">
+            <img src="/images/revised-hero.png" alt="Illustration: room available now (visual proof of capability)" className="w-full h-auto rounded" />
+            <figcaption className="sr-only">Illustration: room available now (visual proof of capability)</figcaption>
+          </figure>
         </section>
 
         <section className="mt-12">

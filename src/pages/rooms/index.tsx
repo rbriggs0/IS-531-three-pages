@@ -3,6 +3,7 @@ import RoomCard from '../../components/RoomCard'
 import { getOccupancy } from '../../lib/mockData'
 import Link from 'next/link'
 import Header from '../../components/Header'
+import HeroPreview from '../../components/HeroPreview'
 
 export default function Rooms() {
   const occ = getOccupancy()
@@ -18,6 +19,9 @@ export default function Rooms() {
           <h1 className="text-2xl font-bold">Rooms now</h1>
           <Link href="/" className="text-sm text-blue-600">Home</Link>
         </div>
+        <section className="mb-6">
+          <HeroPreview />
+        </section>
 
         <div>
           {occ.map((o) => {
