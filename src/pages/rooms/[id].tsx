@@ -27,9 +27,17 @@ export default function RoomDetail() {
       <Head>
         <title>{room.name} — BYU Library Rooms</title>
       </Head>
+      <Header />
       <main className="container py-8">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-2xl font-bold">{room.name}</h1>
+          <div>
+            <h1 className="text-2xl font-bold">{room.name}</h1>
+            <div className="mt-1">
+              {room.status === 'free' && <span className="px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm">Free</span>}
+              {room.status === 'occupied' && <span className="px-3 py-1 rounded-full bg-red-100 text-red-800 text-sm">Occupied</span>}
+              {room.status === 'conflict' && <span className="px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm">Likely conflict</span>}
+            </div>
+          </div>
           <Link href="/" className="text-sm text-blue-600">Home</Link>
         </div>
 
@@ -41,9 +49,23 @@ export default function RoomDetail() {
             <div className="mb-4">
               <strong>Capacity:</strong> {room.capacity}
             </div>
+            {room.thumbnail && (
+              <div className="mb-4">
+                <img src={room.thumbnail} alt={`${room.name} photo`} className="w-full max-w-sm rounded border" />
+              </div>
+            )}
             <div className="mb-4">
-              <button className="bg-red-600 text-white px-4 py-2 rounded mr-2">Report occupancy</button>
-              <button className="bg-green-600 text-white px-4 py-2 rounded">Claim reservation</button>
+              {room.status === 'conflict' ? (
+                <>
+                  <button className="bg-red-600 text-white px-4 py-2 rounded mr-2">Report conflict</button>
+                  <button className="bg-green-600 text-white px-4 py-2 rounded">Claim this room</button>
+                </>
+              ) : (
+                <>
+                  <button className="bg-red-600 text-white px-4 py-2 rounded mr-2">Report occupancy</button>
+                  <button className="bg-green-600 text-white px-4 py-2 rounded">Claim reservation</button>
+                </>
+              )}
             </div>
           </div>
 

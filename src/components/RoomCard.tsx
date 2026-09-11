@@ -5,11 +5,12 @@ type Props = {
   id: string
   name: string
   location: string
-  status: 'free' | 'occupied' | 'uncertain'
+  status: 'free' | 'occupied' | 'conflict'
+  thumbnail?: string
   conflict?: boolean
 }
 
-export default function RoomCard({ id, name, location, status, conflict }: Props) {
+export default function RoomCard({ id, name, location, status, thumbnail, conflict }: Props) {
   const color =
     status === 'free' ? 'bg-green-100 text-green-800' : status === 'occupied' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
 
@@ -17,16 +18,14 @@ export default function RoomCard({ id, name, location, status, conflict }: Props
     <Link href={`/rooms/${id}`} className="block border rounded-md p-4 hover:shadow-sm transition-colors mb-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
-          {status === 'free' && (
-            <img src="/images/room-example.png" alt={`${name} photo`} className="w-20 h-12 object-cover rounded-sm border" />
-          )}
+          <img src={thumbnail ?? '/images/room-example.png'} alt={`${name} photo`} className="w-20 h-12 object-cover rounded-sm border" />
           <div>
             <div className="font-semibold">{name}</div>
             <div className="text-sm text-slate-500">{location}</div>
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {conflict && <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded">Likely conflict</span>}
+          {(status === 'conflict' || conflict) && <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Likely conflict</span>}
           <div className={`px-3 py-1 rounded-full text-sm ${color}`}>{status.toUpperCase()}</div>
         </div>
       </div>

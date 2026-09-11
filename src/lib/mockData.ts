@@ -11,12 +11,15 @@ export type Room = {
   name: string;
   location: string;
   capacity: number;
+  // status is the single source of truth for UI
+  status: 'free' | 'occupied' | 'conflict';
+  thumbnail?: string;
 };
 
 export const rooms: Room[] = [
-  { id: 'r1', name: 'HBLL 101', location: 'HBLL', capacity: 6 },
-  { id: 'r2', name: 'HBLL 202', location: 'HBLL', capacity: 4 },
-  { id: 'r3', name: 'HBLL 303', location: 'HBLL', capacity: 8 },
+  { id: 'r1', name: 'HBLL 101', location: 'HBLL', capacity: 6, status: 'free', thumbnail: '/images/room-example.png' },
+  { id: 'r2', name: 'HBLL 202', location: 'HBLL', capacity: 4, status: 'occupied', thumbnail: '/images/room-example.png' },
+  { id: 'r3', name: 'HBLL 303', location: 'HBLL', capacity: 8, status: 'conflict', thumbnail: '/images/room-example.png' },
 ];
 
 export const reservations: Reservation[] = [
@@ -37,20 +40,22 @@ export const reservations: Reservation[] = [
 ];
 
 export function getOccupancy() {
-  // Simple simulated occupancy: room r1 currently occupied, others free or uncertain
+  // Return occupancy derived from the single source of truth in `rooms`
   const now = Date.now();
   return rooms.map((r) => {
-    const hasCurrentRes = reservations.some(
-      (res) => res.roomId === r.id && new Date(res.startISO).getTime() <= now && new Date(res.endISO).getTime() >= now
-    );
-    let status: 'free' | 'occupied' | 'uncertain' = 'free';
-    if (r.id === 'r1') status = 'occupied';
-    else if (r.id === 'r3') status = 'uncertain';
+    const todaysReservations = reservations.filter((res) => {
+      const d = new Date(res.startISO);
+      return res.roomId === r.id && d.toDateString() === new Date(now).toDateString();
+    });
     return {
       roomId: r.id,
-      status,
-      hasCurrentRes,
-      checkIns: status === 'occupied' ? 2 : 0,
+      name: r.name,
+      location: r.location,
+      capacity: r.capacity,
+      status: r.status,
+      thumbnail: r.thumbnail,
+      reservations: todaysReservations,
+      conflict: r.status === 'conflict',
       lastUpdated: new Date().toISOString()
     };
   });

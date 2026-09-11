@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import RoomCard from '../../components/RoomCard'
-import { getOccupancy, rooms } from '../../lib/mockData'
+import { getOccupancy } from '../../lib/mockData'
 import Link from 'next/link'
 import Header from '../../components/Header'
 
 export default function Rooms() {
   const occ = getOccupancy()
-  const byId = Object.fromEntries(rooms.map((r) => [r.id, r]))
 
   return (
     <>
@@ -22,9 +21,17 @@ export default function Rooms() {
 
         <div>
           {occ.map((o) => {
-            const r = byId[o.roomId]
-            const conflict = o.status === 'uncertain' || (o.status === 'occupied' && !o.hasCurrentRes)
-            return <RoomCard key={o.roomId} id={r.id} name={r.name} location={r.location} status={o.status} conflict={conflict} />
+            return (
+              <RoomCard
+                key={o.roomId}
+                id={o.roomId}
+                name={o.name}
+                location={o.location}
+                status={o.status}
+                thumbnail={o.thumbnail}
+                conflict={o.conflict}
+              />
+            )
           })}
         </div>
       </main>
