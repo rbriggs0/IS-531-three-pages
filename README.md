@@ -1,6 +1,6 @@
 # BYU Library Rooms — Three Screens Prototype
 
-Live deploy: (to be added)
+Live deploy: https://is-531-three-pages-2mkh.vercel.app/
 
 Core affordance
 ----------------
@@ -20,6 +20,9 @@ Three screens
 
 3) Room Detail (/rooms/[id]) — Job: Show a reservation timeline, current occupancy, and actions to report occupancy or claim a reservation. Design question: Does the timeline and actions let users understand whether a reservation is honored or contested?
 
+Before: original-landing.png
+After: image.png
+
 Feedback questions and predictions
 ---------------------------------
 Need
@@ -36,7 +39,7 @@ Capability
 
 Design justification & first read
 --------------------------------
-- Affordance sentence is the dominant element on the landing screen to communicate certainty instantly.
+- Affordance sentence: Know which BYU library rooms are actually free right now so you don’t walk over to a taken reservation.
 - The Room List groups related information (room name, location, status badge) so users can scan by Gestalt proximity and similarity.
 - The Room Detail focuses on the timeline and a pair of clear actions (Report / Claim) to keep the screen mission-focused.
 - Revision made after initial scaffold: increased hero hierarchy and added an explicit \"Likely conflict\" badge so conflict signaling is more prominent. This change addresses the problem that the original hero gave similar visual weight to descriptive copy and supporting content, which diluted the affordance.
