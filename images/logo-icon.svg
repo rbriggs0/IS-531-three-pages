@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RoomsNow logo">
+  <!-- Background circle (transparent) -->
+  <defs>
+    <style>
+      .brand { fill: #0B4F6C; }
+      .check { fill: #16A34A; }
+      .white { fill: #ffffff; }
+    </style>
+  </defs>
+
+  <!-- stylized open book -->
+  <path class="brand" d="M16 76c12-10 28-16 40-16s28 6 40 16v28c0 2-2 4-4 4H20c-2 0-4-2-4-4V76z" opacity="0.95"/>
+  <path class="white" d="M20 80c10-6 24-10 36-10s26 4 36 10v20c0 1-1 2-2 2H22c-1 0-2-1-2-2V80z" opacity="0.08"/>
+
+  <!-- location pin above the book -->
+  <path class="brand" d="M64 12c12 0 22 10 22 22 0 18-22 42-22 42S42 52 42 34c0-12 10-22 22-22z"/>
+  <circle class="white" cx="64" cy="34" r="8"/>
+
+  <!-- check mark inside pin -->
+  <path class="check" d="M58 34.5l4.2 4.2L74 27" stroke="#16A34A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+</svg>
+
