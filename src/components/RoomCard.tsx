@@ -25,8 +25,13 @@ export default function RoomCard({ id, name, location, status, thumbnail, confli
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {(status === 'conflict' || conflict) && <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">Likely conflict</span>}
-          <div className={`px-3 py-1 rounded-full text-sm ${color}`}>{status.toUpperCase()}</div>
+          {status === 'conflict' || conflict ? (
+            <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded inline-flex items-center" aria-label="Likely conflict">Likely conflict</span>
+          ) : (
+            <div className={`px-3 py-1 rounded-full text-sm ${color}`} aria-label={status}>
+              {status.toUpperCase()}
+            </div>
+          )}
         </div>
       </div>
       <div className="mt-3 text-xs text-slate-600">Tap to view timeline and resolve conflicts</div>
